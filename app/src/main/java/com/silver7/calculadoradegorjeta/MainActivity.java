@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        textPorcentagem.setText(progress + "%");
+
                         String valida = valorDaConta.getText().toString();
                         if (valida == null || valida.equals("")) {
 
@@ -55,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
 
                             String vrDaConta = valorDaConta.getText().toString();
                             Double valorConta = Double.parseDouble(vrDaConta);
-                            textPorcentagem.setText(progress + "%");
                             valorGorjeta.setText("R$ " + (valorConta * progress) / 100);
                             valorTotal.setText("R$ " + (((valorConta * progress) / 100) + valorConta));
                         }
